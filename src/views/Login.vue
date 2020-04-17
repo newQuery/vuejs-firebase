@@ -23,13 +23,13 @@
         methods: {
             login: function() {
                 firebase.auth().signInWithEmailAndPassword(this.email, this.password)
-                .then(function() {
-                    alert('Well done, you\'re connected !');
+                .then(() => {
+                    this.$router.replace('home');
                 })
                 .catch(function(err) {
                     alert(err.message);
                 });
-            }   
+            }
         }
     }
 </script>

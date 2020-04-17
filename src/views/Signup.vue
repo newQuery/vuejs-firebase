@@ -23,9 +23,9 @@
         methods: {
             signUp: function() {
                 firebase.auth().createUserWithEmailAndPassword(this.email, this.password)
-                    .then(function() {
-                    alert('Your user has been created !');
-                })
+                    .then(() => {
+                        this.$router.replace('login');
+                    })
                 .catch(function(error) {
                     alert(error.message);
                 })
